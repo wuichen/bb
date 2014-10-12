@@ -1,0 +1,32 @@
+.content{
+	width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	text-align: center;
+}
+
+.carouselPic{
+	width: 600px;
+	height: 300px; 
+	background-color: green;
+}
+
+.block{
+	display: inline-block;
+}
+
+.square{
+    width: 300px;
+    height: 300px;
+    margin: 2px;
+    border: 3px solid #c99;
+    background-position: center center;
+    background-size: cover;
+}
+
+.uploadZone{
+	width: 900px;
+	height: 300px;
+	margin: auto;
+}

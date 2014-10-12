@@ -1,0 +1,14 @@
+{
+  "name": "newBB",
+  "version": "0.0.0",
+  "authors": [
+    "I-Chen Wu <icw3@u.washington.edu>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "foundation": "~5.4.5",
+    "angular": "~1.2.26",
+    "angular-route": "~1.2.26",
+    "ngInfiniteScroll": "1.0.0"
+  }
+}

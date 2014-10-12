@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="bb">
+
+  <head>
+    <!--foundation css-->
+    <link href="bower_components/foundation/css/foundation.css" type="text/css" rel="stylesheet" />
+    <link href="css/dropzone.css" type="text/css" rel="stylesheet" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+
+
+  </head>
+
+  <body ng-controller="bbController">
+    
+
+<!--  useless stuff maybe
+     <form ng-submit="submit()">
+      Enter text and hit enter:
+      <input type="text" ng-model="text" name="text" />
+      <input type="submit" id="submit" value="Submit" />
+      <pre>list={{list}}</pre>
+    </form> -->
+
+    <div class="content" infinite-scroll='loadMore()' infinite-scroll-distance='1'>
+      <div class="carouselPic block small-6 large-6"></div>
+      <div class="block" style="width:300px; height: 300px">
+        <div style="height:100px; width:300px; background-color:red; float:left;">
+          yea
+        </div>
+
+        <div ng-click="upload=!upload" style="height:100px; width:300px; background-color:blue; float:left">
+          yo
+        </div>
+        <div ng-click="upload=false;" style="height:100px; width:300px; background-color:yellow; float:left">
+          <input type="text" ng-model="search.description" placeholder="Search">
+        </div>
+
+      </div>
+      <form ng-show="upload" action="upload.php" class="dropzone uploadZone" ></form>
+      
+      <div class="block square" ng-repeat="file in list | filter:search" style="background-image: url('uploads/{{file.pic_name}}');">
+      </div>
+
+    </div>
+
+
+
+    <!-- script -->
+    <script src="bower_components/foundation/js/vendor/jquery.js"></script>
+    <script src="bower_components/foundation/js/foundation/foundation.js"></script>
+    <script src="bower_components/foundation/js/foundation/foundation.offcanvas.js"></script>
+    <script src="bower_components/foundation/js/foundation/foundation.reveal.js"></script>
+
+    <!-- Other JS plugins can be included here -->
+
+    <script src="js/dropzone.js"></script>
+    <script src="js/awesomeDrop.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.min.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+      var anniversary = new Date(2011,6,1);
+      var today = new Date();
+      var diff =  Math.floor(( Date.parse(today) - Date.parse(anniversary) ) / 86400000);
+      console.log(diff);
+    </script>
+  </body>
+
+</html>
