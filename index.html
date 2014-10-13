@@ -85,10 +85,15 @@
        <hr>
 
       <form id="dz" ng-show="upload" action="upload.php" class="dropzone uploadZone" ></form>
-      
-      <div class=" square" ng-repeat="file in list | filter:search" style="background-image: url('uploads/{{file.pic_name}}');">
-      </div>
 
+      <div ng-repeat="file in list | filter:search" style="display:inline-block; height:450px;">
+        <div class="square" style="background-image: url('uploads/{{file.pic_name}}');">
+        </div>
+        <p ng-show="!edit">{{file.description}}</p>
+        <textarea ng-model="file.description" ng-show="edit"></textarea>
+        <button ng-show="edit" ng-click="edit=!edit; update(file);" class="fa fa-check-square"></button>
+        <button ng-show="!edit" ng-click="edit=!edit;" class="fa fa-pencil-square-o"></button>
+      </div>
     </div>
 
 

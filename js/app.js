@@ -23,12 +23,22 @@ app.service('dataFactory', ['$http', '$q',
   }
 ]);
 
-app.controller('bbController', ['$scope', 'dataFactory', function($scope,dataFactory) {
+app.controller('bbController', ['$scope', 'dataFactory', '$http', function($scope,dataFactory,$http) {
   $scope.list = [];
   var anniversary = new Date(2011,6,1);
   var today = new Date();
   var diff =  Math.floor(( Date.parse(today) - Date.parse(anniversary) ) / 86400000);
   $scope.day = diff;
+
+  $scope.update = function(file) {
+    var data = JSON.stringify(file);
+    $http({
+        url: 'update.php',
+        data : data,
+        method : 'POST',
+        headers : {'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}
+    });
+  }
 
   $scope.loadMore = function(){
     for (var i = 0; i <= 3; i++) {
