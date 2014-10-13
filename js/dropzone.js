@@ -1490,8 +1490,9 @@ require.register("dropzone/lib/dropzone.js", function (exports, module) {
         this.emit("success", file, responseText, e);
         this.emit("complete", file);
         console.log(file.name);
-
-
+        // if(file.name.toLowerCase().indexOf("jpg") > -1 || file.name.toLowerCase().indexOf("png") > -1 || file.name.toLowerCase().indexOf("jpeg") > -1 || file.name.toLowerCase().indexOf("gif") > -1){
+        //   myData.push({name:file.name.split('.').join('').split('-').join('').split(' ').join('').split("").reverse().join(""), path: file.name, text: 'edit me oh!!'});
+        // }
 
       }
       if (this.options.uploadMultiple) {

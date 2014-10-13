@@ -25,14 +25,10 @@ app.service('dataFactory', ['$http', '$q',
 
 app.controller('bbController', ['$scope', 'dataFactory', function($scope,dataFactory) {
   $scope.list = [];
-  // $scope.text = 'hello';
-
-  // $scope.submit = function() {
-  //   if ($scope.text) {
-  //     $scope.list.push(this.text);
-  //     $scope.text = '';
-  //   }
-  // };
+  var anniversary = new Date(2011,6,1);
+  var today = new Date();
+  var diff =  Math.floor(( Date.parse(today) - Date.parse(anniversary) ) / 86400000);
+  $scope.day = diff;
 
   $scope.loadMore = function(){
     for (var i = 0; i <= 3; i++) {
